@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeMasters Raipur - Elite Software Engineering Coaching</title>
+    <title>CodeFounders - Elite Software Engineering Coaching</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -69,7 +69,8 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -159,6 +160,57 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
+        .hero-tagline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), #2563eb);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-tagline i {
+            font-size: 1.2rem;
+        }
+
+        .hero-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .highlight-item i {
+            color: #ffd700;
+            font-size: 1.1rem;
+        }
+
+        .highlight-item span {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
         /* Stats Section */
         .stats {
             padding: 4rem 0;
@@ -231,28 +283,107 @@
             margin-bottom: 1.5rem;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+        .product-journey {
+            margin-bottom: 2rem;
         }
 
-        .feature-item {
+        .journey-step {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
         }
 
-        .feature-icon {
-            width: 50px;
-            height: 50px;
+        .step-number {
             background: var(--gradient);
-            border-radius: 10px;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--light);
-            font-size: 1.2rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .step-content p {
+            color: var(--gray);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .unique-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .success-card {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .success-metrics {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric .number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffd700;
+        }
+
+        .metric .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
         /* Test Section */
@@ -484,6 +615,14 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
+        .form-help {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
         .submit-btn {
             background: var(--primary);
             color: var(--light);
@@ -552,6 +691,16 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 1rem;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-container nav {
                 display: none;
@@ -585,6 +734,83 @@
 
             .test-features {
                 grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mode-badge {
+                position: static;
+                margin-bottom: 1rem;
+                display: inline-block;
+            }
+
+            .pricing-card.featured .mode-badge {
+                position: static;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+
+            .pricing-header {
+                padding-top: 2rem;
+            }
+
+            .featured-badge,
+            .mode-badge {
+                top: 0.5rem;
+                font-size: 0.7rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .note-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-card.featured {
+                transform: none;
+            }
+
+            .course-card.featured:hover {
+                transform: translateY(-5px);
+            }
+
+            .highlight-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .highlight-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+
+            .referral-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-highlights {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .highlight-item {
+                justify-content: center;
             }
         }
 
@@ -633,25 +859,34 @@
             gap: 0.5rem;
         }
 
-        .qr-placeholder {
-            width: 150px;
-            height: 150px;
-            background: #e5e7eb;
-            border: 2px dashed var(--gray);
-            border-radius: 10px;
+        .qr-container {
+            width: 200px;
+            height: 200px;
             margin: 1rem auto;
+            position: relative;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: var(--gray);
-            font-size: 0.9rem;
         }
 
-        .qr-placeholder i {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            opacity: 0.5;
+        .qr-code-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 2px solid #e5e7eb;
+        }
+
+        .qr-overlay {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .google-form-link {
@@ -953,6 +1188,719 @@
             font-weight: 600;
             margin-top: 1rem;
         }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: serif;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars i {
+            color: #ffd700;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-content p {
+            color: var(--gray);
+            font-style: italic;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .author-info h4 {
+            color: var(--dark);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .package {
+            background: var(--success);
+            color: var(--light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-top: 3rem;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .mode-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .mode-badge.online {
+            background: linear-gradient(45deg, #10b981, #34d399);
+        }
+
+        .mode-badge.offline {
+            background: linear-gradient(45deg, #8b5cf6, #a78bfa);
+        }
+
+        .pricing-card.featured .mode-badge {
+            top: 1rem;
+        }
+
+        .pricing-header h3 {
+            color: var(--dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .period {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .price-description {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .pricing-features {
+            margin-bottom: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature i {
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+
+        .pricing-cta {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .discount-badge {
+            background: var(--success);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .original-price {
+            color: var(--gray);
+            text-decoration: line-through;
+            font-size: 0.9rem;
+        }
+
+        .total-price {
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .duration {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .monthly-rate {
+            color: var(--gray);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        .pricing-note {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .note-card {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: var(--light);
+            padding: 2rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            max-width: 500px;
+        }
+
+        .note-card i {
+            font-size: 2rem;
+            color: #ffd700;
+        }
+
+        .note-card h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .note-card p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Referral Program Section */
+        .referral {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .referral-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        .referral-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .referral-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .referral-card h3 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .referral-details {
+            margin-bottom: 2rem;
+        }
+
+        .referral-rule {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .referral-rule i {
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+
+        .referral-rule span {
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .referral-bonus {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+        }
+
+        .bonus-amount {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .bonus-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .referral-steps h4 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .referral-steps .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .referral-steps .step-number {
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .referral-steps .step-content h5 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .referral-steps .step-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .referral-example {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .referral-info {
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .info-card h4 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .code-examples {
+            margin: 1.5rem 0;
+        }
+
+        .example {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .example .label {
+            font-weight: 600;
+            color: var(--dark);
+            min-width: 80px;
+        }
+
+        .example .code {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        .info-card .note {
+            background: #e8f4fd;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .course-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .course-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card.featured:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        .course-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .course-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: var(--light);
+            font-size: 2rem;
+        }
+
+        .course-header h3 {
+            color: var(--dark);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-badge {
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .course-tech {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .tech-item {
+            background: #e5e7eb;
+            color: var(--dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .course-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .course-features .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .course-features .feature i {
+            color: var(--success);
+            font-size: 1rem;
+        }
+
+        .course-bonus {
+            background: #f0f9f4;
+            border: 1px solid var(--success);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            color: var(--success);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .course-bonus.featured-bonus {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: var(--light);
+            border: none;
+        }
+
+        .vibecoding-highlight {
+            margin-top: 4rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vibecoding-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .highlight-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .highlight-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .highlight-text p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .vibecoding-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .vibe-feature {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -960,11 +1908,14 @@
     <header>
         <div class="container">
             <div class="nav-container">
-                <div class="logo">CodeMasters</div>
+                <div class="logo">CodeFounders</div>
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#referral">Referral</a></li>
                         <li><a href="#test">Entrance Test</a></li>
                         <li><a href="#leaderboard">Leaderboard</a></li>
                         <li><a href="#team">Team</a></li>
@@ -985,8 +1936,26 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Elite Software Engineering Coaching in Raipur</h1>
-                <p class="hero-subtitle">Transform into a world-class software engineer. Join the top 50 selected candidates for intensive training and guaranteed placement support.</p>
+                <h1>Build Your Own Product Company in 6 Months</h1>
+                <p class="hero-subtitle">Join CodeFounders and transform from a student to a product founder. Learn, Build, Launch, and Scale your first startup with expert guidance.</p>
+                <div class="hero-tagline">
+                    <i class="fas fa-rocket"></i>
+                    <span>Turning Each Batch Into Product-Based Organizations</span>
+                </div>
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Build & Launch Real Products</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-users"></i>
+                        <span>Become a Product Company</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Pre-Seed Investment Ready</span>
+                    </div>
+                </div>
                 <a href="#test" class="cta-button">
                     <i class="fas fa-rocket"></i> Take Entrance Test - ₹500
                 </a>
@@ -1000,19 +1969,19 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <h3>50</h3>
-                    <p>Selected Students Only</p>
+                    <p>Selected Students</p>
                 </div>
                 <div class="stat-item">
-                    <h3>₹5000</h3>
-                    <p>Monthly Fee</p>
+                    <h3>6</h3>
+                    <p>Months to Product</p>
                 </div>
                 <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Placement Support</p>
+                    <h3>₹500</h3>
+                    <p>Referral Bonus</p>
                 </div>
                 <div class="stat-item">
-                    <h3>3</h3>
-                    <p>Expert Instructors</p>
+                    <h3>24/7</h3>
+                    <p>Support Available</p>
                 </div>
             </div>
         </div>
@@ -1021,75 +1990,159 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title fade-in">Why Choose CodeMasters?</h2>
-            <p class="section-subtitle fade-in">We're not just another coding bootcamp. We're building the next generation of software engineering leaders in Raipur.</p>
+            <h2 class="section-title fade-in">Let's Be Part of Founding Team as Real Impact Makers</h2>
+            <p class="section-subtitle fade-in">We don't just teach coding - we build founding teams that create real impact. Your 6-month journey ends with a live product and investment-ready startup.</p>
             
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <h3>Why We're the Best Choice</h3>
-                    <p>We don't just teach coding - we build complete software engineers. Our unique approach combines traditional programming excellence with cutting-edge AI integration, ensuring you're future-ready.</p>
-                    
-                    <div style="background: #e8f4fd; padding: 1.5rem; border-radius: 15px; margin: 1.5rem 0; border-left: 4px solid var(--primary);">
-                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">🚀 Real-World Impact</h4>
-                        <p style="color: var(--dark); margin: 0;">You'll solve actual industry problems and build products that go live. Our students have created applications used by thousands of real users!</p>
+                    <div class="product-journey">
+                        <div class="journey-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Learn Full-Stack Development</h4>
+                                <p>Master Java/Python/JS + React + Docker + AWS</p>
+                            </div>
+                        </div>
+                        <div class="journey-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Identify & Solve Real Problems</h4>
+                                <p>Build products that actually help people</p>
+                            </div>
+                        </div>
+                        <div class="journey-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Launch & Scale Your Product</h4>
+                                <p>Go live with real users and get feedback</p>
+                            </div>
+                        </div>
+                        <div class="journey-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Be Part of Founding Team</h4>
+                                <p>Join as real impact makers driving innovation</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div style="background: #f0f9f4; padding: 1.5rem; border-radius: 15px; margin: 1.5rem 0; border-left: 4px solid var(--success);">
-                        <h4 style="color: var(--success); margin-bottom: 0.5rem;">🤖 AI + Traditional Excellence</h4>
-                        <p style="color: var(--dark); margin: 0;">Master both AI-assisted development AND core programming fundamentals. Learn when to use AI tools and when to code from scratch.</p>
-                    </div>
-                    
-                    <div class="features-grid">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div>
-                                <h4>Selective Admission</h4>
-                                <p>Only top 50 candidates selected</p>
-                            </div>
+                    <div class="unique-features">
+                        <div class="feature-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>24/7 Support Room</h4>
+                            <p>Online students can join anytime between 11 AM - 6 PM for instant help</p>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div>
-                                <h4>Full-Stack Training</h4>
-                                <p>Frontend, Backend, DevOps & AI</p>
-                            </div>
+                        <div class="feature-card">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Product + Certificate</h4>
+                            <p>Graduate with both a live product and professional certificate</p>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div>
-                                <h4>Live Products</h4>
-                                <p>Build & deploy real applications</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <div>
-                                <h4>Lifetime Support</h4>
-                                <p>Career switch referrals</p>
-                            </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gift"></i>
+                            <h4>10% Full Payment Discount</h4>
+                            <p>Pay entire 6-month fee upfront and save 10%</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="about-visual fade-in">
-                    <div class="test-card">
-                        <h3>🏆 Special Reward</h3>
-                        <p><strong>Rank 1 Winner</strong> gets first 2 months completely FREE!</p>
-                        <div class="test-price">₹10,000</div>
-                        <p>Worth of free coaching for the topper</p>
+                    <div class="success-card">
+                        <h3>🎯 Your Success Path</h3>
+                        <div class="success-metrics">
+                            <div class="metric">
+                                <span class="number">6</span>
+                                <span class="label">Months</span>
+                            </div>
+                            <div class="metric">
+                                <span class="number">1</span>
+                                <span class="label">Live Product</span>
+                            </div>
+                            <div class="metric">
+                                <span class="number">∞</span>
+                                <span class="label">Possibilities</span>
+                            </div>
+                        </div>
+                        <p><strong>Let's be part of founding team as real impact makers!</strong></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Testimonials Section -->
+    <!-- 
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Students Say</h2>
+            <p class="section-subtitle fade-in">Hear from our successful graduates who transformed their careers with CodeFounders</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"CodeFounders completely changed my career trajectory. From a fresher to landing a ₹12 LPA job at a top tech company in just 8 months. The hands-on projects and mentorship were game-changing!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <h4>Rahul Kumar</h4>
+                            <p>Software Engineer @ TechCorp</p>
+                            <span class="package">₹12 LPA</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The AI integration training was revolutionary! I learned to code both traditionally and with AI assistance. Now I'm building cutting-edge applications that actually solve real problems."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SP</div>
+                        <div class="author-info">
+                            <h4>Shreya Patel</h4>
+                            <p>Full Stack Developer @ StartupX</p>
+                            <span class="package">₹15 LPA</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The placement support was incredible. They didn't just teach coding - they taught me how to think like an engineer. Got placed within 2 months of completing the program!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Arjun Mehta</h4>
+                            <p>Backend Engineer @ FinTech Solutions</p>
+                            <span class="package">₹18 LPA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
 
     <!-- Test Section -->
     <section id="test" class="test-section">
@@ -1156,28 +2209,18 @@
                 </div>
 
                 <!-- Payment Options -->
-                <div class="payment-options">
-                    <div class="payment-method" onclick="selectPayment('qr')">
+                <div class="payment-options" style="display: flex; justify-content: center;">
+                    <div class="payment-method" onclick="selectPayment('qr')" style="text-align: center; max-width: 400px;">
                         <h4><i class="fas fa-qrcode"></i> UPI QR Payment</h4>
-                        <div class="qr-placeholder">
-                            <i class="fas fa-qrcode"></i>
-                            <p>QR Code will be<br>displayed here</p>
-                            <small style="color: var(--primary); font-weight: 600;">Scan & Pay ₹500</small>
+                        <div class="qr-container" style="margin: 0 auto;">
+                            <img src="QRCode.jpg" alt="UPI QR Code" class="qr-code-image">
+                            <div class="qr-overlay">
+                                <small style="color: var(--primary); font-weight: 600;">Scan & Pay ₹500</small>
+                            </div>
                         </div>
                         <p style="color: var(--gray); font-size: 0.9rem;">Scan with any UPI app<br>Take screenshot of payment</p>
                     </div>
                     
-                    <div class="payment-method" onclick="selectPayment('online')">
-                        <h4><i class="fas fa-credit-card"></i> Online Payment</h4>
-                        <div style="padding: 2rem 0;">
-                            <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--success); margin-bottom: 1rem;"></i>
-                            <p><strong>Secure Payment Gateway</strong></p>
-                            <p style="color: var(--gray); font-size: 0.9rem;">Credit Card, Debit Card<br>Net Banking, UPI</p>
-                        </div>
-                        <button class="cta-button" onclick="openTestModal()" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">
-                            Pay Online ₹500
-                        </button>
-                    </div>
                 </div>
 
                 <!-- Google Form Link -->
@@ -1206,6 +2249,405 @@
         </div>
     </section>
 
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Full-Stack Development Tracks</h2>
+            <p class="section-subtitle fade-in">Choose your preferred technology stack. All tracks include Vibecoding as a complimentary bonus!</p>
+            
+            <div class="courses-grid">
+                <!-- Java Full Stack Track -->
+                <div class="course-card fade-in">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h3>Java Full Stack</h3>
+                        <div class="course-badge">Most Popular</div>
+                    </div>
+                    <div class="course-tech">
+                        <div class="tech-stack">
+                            <span class="tech-item">Java</span>
+                            <span class="tech-item">Spring Boot</span>
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">AWS</span>
+                        </div>
+                    </div>
+                    <div class="course-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Enterprise-grade backend with Spring Boot</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Modern React frontend development</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Containerization with Docker</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Cloud deployment on AWS</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Database design & optimization</span>
+                        </div>
+                    </div>
+                    <div class="course-bonus">
+                        <i class="fas fa-gift"></i>
+                        <span>Vibecoding included as complimentary bonus!</span>
+                    </div>
+                </div>
+
+                <!-- Python Full Stack Track -->
+                <div class="course-card fade-in">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Python Full Stack</h3>
+                        <div class="course-badge">AI-Ready</div>
+                    </div>
+                    <div class="course-tech">
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">Flask</span>
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">AWS</span>
+                        </div>
+                    </div>
+                    <div class="course-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Rapid backend development with Flask</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Dynamic React frontend</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Microservices architecture</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>AWS cloud infrastructure</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>API development & integration</span>
+                        </div>
+                    </div>
+                    <div class="course-bonus">
+                        <i class="fas fa-gift"></i>
+                        <span>Vibecoding included as complimentary bonus!</span>
+                    </div>
+                </div>
+
+                <!-- JavaScript Full Stack Track -->
+                <div class="course-card fade-in">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h3>JavaScript Full Stack</h3>
+                        <div class="course-badge">Modern Stack</div>
+                    </div>
+                    <div class="course-tech">
+                        <div class="tech-stack">
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">Express</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">AWS</span>
+                        </div>
+                    </div>
+                    <div class="course-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Full JavaScript ecosystem</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>React frontend mastery</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Node.js backend development</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Containerized deployment</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Real-time applications</span>
+                        </div>
+                    </div>
+                    <div class="course-bonus">
+                        <i class="fas fa-gift"></i>
+                        <span>Vibecoding included as complimentary bonus!</span>
+                    </div>
+                </div>
+
+                <!-- AI/ML Specialization Track -->
+                <div class="course-card featured fade-in">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI/ML & GenAI</h3>
+                        <div class="course-badge">Future-Ready</div>
+                    </div>
+                    <div class="course-tech">
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">ML/AI</span>
+                            <span class="tech-item">RAG</span>
+                            <span class="tech-item">GenAI</span>
+                            <span class="tech-item">Vibecoding</span>
+                        </div>
+                    </div>
+                    <div class="course-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Machine Learning fundamentals</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>RAG (Retrieval-Augmented Generation)</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Generative AI applications</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>AI-powered development</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Future of software development</span>
+                        </div>
+                    </div>
+                    <div class="course-bonus featured-bonus">
+                        <i class="fas fa-crown"></i>
+                        <span>Vibecoding is CORE to this track!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vibecoding Highlight -->
+            <div class="vibecoding-highlight">
+                <div class="highlight-content">
+                    <div class="highlight-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <div class="highlight-text">
+                        <h3>🎉 Vibecoding - The Game Changer</h3>
+                        <p>Vibecoding is our revolutionary approach that combines traditional coding with AI assistance. Learn to code faster, smarter, and more efficiently. It's included as a <strong>complimentary bonus</strong> in every track!</p>
+                        <div class="vibecoding-features">
+                            <span class="vibe-feature">AI-Powered Development</span>
+                            <span class="vibe-feature">Faster Coding</span>
+                            <span class="vibe-feature">Smart Debugging</span>
+                            <span class="vibe-feature">Code Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title fade-in">Program Pricing</h2>
+            <p class="section-subtitle fade-in">Choose the payment plan that works best for you. Early bird discount available!</p>
+            
+            <div class="pricing-grid">
+                <!-- Online Learning - Upfront Payment -->
+                <div class="pricing-card featured fade-in">
+                    <div class="pricing-header">
+                        <div class="featured-badge">Best Value</div>
+                        <div class="mode-badge online">Online Learning</div>
+                        <h3>Upfront Payment (10% Off)</h3>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">21,600</span>
+                            <span class="period">/ 6 months</span>
+                        </div>
+                        <p class="price-description">Save ₹2,400 with upfront payment</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Complete Full-Stack Training</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>AI/ML Integration</span>
+                        </div>
+                    </div>
+                    <div class="pricing-cta">
+                        <span class="discount-badge">Save ₹2,400</span>
+                        <p class="original-price">Original: ₹24,000</p>
+                    </div>
+                </div>
+                
+                <!-- Online Learning - Monthly Payment -->
+                <div class="pricing-card fade-in">
+                    <div class="pricing-header">
+                        <div class="mode-badge online">Online Learning</div>
+                        <h3>Monthly Payment</h3>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">4,000</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="price-description">Flexible monthly payments</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Complete Full-Stack Training</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>AI/ML Integration</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Live Project Development</span>
+                        </div>
+                    </div>
+                    <div class="pricing-cta">
+                        <span class="total-price">Total: ₹24,000</span>
+                        <p class="duration">6 months program</p>
+                    </div>
+                </div>
+
+                <!-- Offline Learning - Upfront Payment -->
+                <div class="pricing-card fade-in">
+                    <div class="pricing-header">
+                        <div class="mode-badge offline">Offline Learning (Raipur)</div>
+                        <h3>Upfront Payment (10% Off)</h3>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">27,000</span>
+                            <span class="period">/ 6 months</span>
+                        </div>
+                        <p class="price-description">Save ₹3,000 with upfront payment</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Complete Full-Stack Training</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>AI/ML Integration</span>
+                        </div>
+                    </div>
+                    <div class="pricing-cta">
+                        <span class="discount-badge">Save ₹3,000</span>
+                        <p class="original-price">Original: ₹30,000</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-note">
+                <div class="note-card">
+                    <i class="fas fa-gift"></i>
+                    <div>
+                        <h4>Special Offers</h4>
+                        <p><strong>10% Discount:</strong> Pay entire 6-month fee upfront and save 10% | <strong>Rank 1 Winner:</strong> Gets first 2 months completely FREE!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Program Section -->
+    <section id="referral" class="referral">
+        <div class="container">
+            <h2 class="section-title fade-in">Earn While You Learn</h2>
+            <p class="section-subtitle fade-in">Our referral program lets you earn money by helping others join CodeFounders</p>
+            
+            <div class="referral-content">
+                <div class="referral-card fade-in">
+                    <div class="referral-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Referral Program</h3>
+                    <div class="referral-details">
+                        <div class="referral-rule">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Refer a friend who joins and pays 6-month fees</span>
+                        </div>
+                        <div class="referral-rule">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Or refer someone who stays more than 3 months</span>
+                        </div>
+                        <div class="referral-rule">
+                            <i class="fas fa-check-circle"></i>
+                            <span>You get ₹500 per successful referral</span>
+                        </div>
+                    </div>
+                    <div class="referral-bonus">
+                        <span class="bonus-amount">₹500</span>
+                        <span class="bonus-text">per referral</span>
+                    </div>
+                </div>
+                
+                <div class="referral-steps">
+                    <h4>How It Works</h4>
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h5>Share Your Code</h5>
+                            <p>Share your referral code: <strong>Your Name + Mobile Number</strong></p>
+                            <div class="referral-example">
+                                <span>Example: Ankit Gautam + 8602978557</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h5>They Join & Pay</h5>
+                            <p>Your friend enters your referral code in the registration form and pays 6-month fees or stays 3+ months</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h5>You Earn ₹500</h5>
+                            <p>Get ₹500 credited to your account for each successful referral</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="referral-info">
+                <div class="info-card">
+                    <h4>📝 How to Create Your Referral Code</h4>
+                    <p>Your referral code is simply: <strong>Your Full Name + Your Mobile Number</strong></p>
+                    <div class="code-examples">
+                        <div class="example">
+                            <span class="label">Example 1:</span>
+                            <span class="code">Ankit Gautam + 8602978557</span>
+                        </div>
+                    </div>
+                    <p class="note">Share this code with friends and family. When they register using your code, you'll earn ₹500!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Leaderboard Section -->
     <section id="leaderboard" class="leaderboard">
         <div class="container">
@@ -1214,34 +2656,22 @@
                 <p class="section-subtitle fade-in" style="color: rgba(255,255,255,0.8);">Meet our top performers who landed amazing opportunities in leading tech companies</p>
                 
                 <div class="batch-selector fade-in">
-                    <button class="batch-btn active" data-batch="current">Current Batch</button>
-                    <button class="batch-btn" data-batch="batch1">Batch 1 (2025)</button>
-                    <button class="batch-btn" data-batch="batch2">Batch 2 (Coming Soon)</button>
+                    <button class="batch-btn active" data-batch="online">Online Batch</button>
+                    <button class="batch-btn" data-batch="offline">Offline Batch (Raipur, Chhattisgarh)</button>
                 </div>
 
-                <!-- Current Batch (Empty State) -->
-                <div id="current-batch" class="batch-content fade-in">
-                    <div class="empty-leaderboard">
-                        <i class="fas fa-rocket"></i>
-                        <h3>First Batch in Progress!</h3>
-                        <p>Our inaugural batch of 50 selected students is currently undergoing intensive training. 
-                        <br>Top 2 performers will be featured here soon!</p>
-                        <div class="coming-soon-badge">
-                            <i class="fas fa-clock"></i> Results Coming Soon
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Batch 1 (Placeholder with Sample Data) -->
-                <div id="batch1-content" class="batch-content" style="display: none;">
-                    <div class="leaderboard-grid fade-in">
-                        <!-- Top Performer 1 -->
+                <!-- Online Batch -->
+                <div id="online-batch" class="batch-content fade-in">
+                    <div class="leaderboard-grid">
+                        <!-- Top Performer 1 - Online -->
                         <div class="leader-card">
                             <div class="leader-rank">1</div>
-                            <div class="leader-avatar">AS</div>
-                            <h3 class="leader-name">Arjun Sharma</h3>
-                            <p class="leader-company">Google India</p>
-                            <p class="leader-package">₹28 LPA</p>
+                            <div class="leader-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="leader-name">You Could Be Here</h3>
+                            <p class="leader-company">Online Batch - Top Performer</p>
+                            <p class="leader-package">₹25+ LPA</p>
                             
                             <div class="leader-badges">
                                 <span class="badge top-performer">
@@ -1260,13 +2690,15 @@
                             </div>
                         </div>
 
-                        <!-- Top Performer 2 -->
+                        <!-- Top Performer 2 - Online -->
                         <div class="leader-card">
                             <div class="leader-rank">2</div>
-                            <div class="leader-avatar">PM</div>
-                            <h3 class="leader-name">Priya Mishra</h3>
-                            <p class="leader-company">Microsoft Hyderabad</p>
-                            <p class="leader-package">₹25 LPA</p>
+                            <div class="leader-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="leader-name">Or You Could Be Here</h3>
+                            <p class="leader-company">Online Batch - Top Performer</p>
+                            <p class="leader-package">₹20+ LPA</p>
                             
                             <div class="leader-badges">
                                 <span class="badge top-performer">
@@ -1287,22 +2719,74 @@
                     </div>
                     
                     <div style="text-align: center; margin-top: 2rem; color: rgba(255,255,255,0.7);">
-                        <p><em>* This is sample data. Actual results will be displayed here once our first batch completes.</em></p>
+                        <p><em>* These are placeholder examples. Your success story could be featured here!</em></p>
                     </div>
                 </div>
 
-                <!-- Batch 2 (Future) -->
-                <div id="batch2-content" class="batch-content" style="display: none;">
-                    <div class="empty-leaderboard">
-                        <i class="fas fa-calendar-plus"></i>
-                        <h3>Batch 2 Opening Soon!</h3>
-                        <p>Registration for our second batch will open after the successful completion of Batch 1.
-                        <br>Stay tuned for announcements!</p>
-                        <div class="coming-soon-badge">
-                            <i class="fas fa-bell"></i> Get Notified
+                <!-- Offline Batch -->
+                <div id="offline-batch" class="batch-content" style="display: none;">
+                    <div class="leaderboard-grid fade-in">
+                        <!-- Top Performer 1 - Offline -->
+                        <div class="leader-card">
+                            <div class="leader-rank">1</div>
+                            <div class="leader-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="leader-name">You Could Be Here</h3>
+                            <p class="leader-company">Offline Batch (Raipur) - Top Performer</p>
+                            <p class="leader-package">₹30+ LPA</p>
+                            
+                            <div class="leader-badges">
+                                <span class="badge top-performer">
+                                    <i class="fas fa-crown"></i> Top Performer
+                                </span>
+                                <span class="badge certificate">
+                                    <i class="fas fa-certificate"></i> Excellence Certificate
+                                </span>
+                            </div>
+                            
+                            <div class="leader-skills">
+                                <span class="leader-skill">Java</span>
+                                <span class="leader-skill">Spring Boot</span>
+                                <span class="leader-skill">Docker</span>
+                                <span class="leader-skill">AWS</span>
+                            </div>
+                        </div>
+
+                        <!-- Top Performer 2 - Offline -->
+                        <div class="leader-card">
+                            <div class="leader-rank">2</div>
+                            <div class="leader-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="leader-name">Or You Could Be Here</h3>
+                            <p class="leader-company">Offline Batch (Raipur) - Top Performer</p>
+                            <p class="leader-package">₹25+ LPA</p>
+                            
+                            <div class="leader-badges">
+                                <span class="badge top-performer">
+                                    <i class="fas fa-star"></i> Top Performer
+                                </span>
+                                <span class="badge certificate">
+                                    <i class="fas fa-certificate"></i> Excellence Certificate
+                                </span>
+                            </div>
+                            
+                            <div class="leader-skills">
+                                <span class="leader-skill">Python</span>
+                                <span class="leader-skill">Flask</span>
+                                <span class="leader-skill">React</span>
+                                <span class="leader-skill">ML/AI</span>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem; color: rgba(255,255,255,0.7);">
+                        <p><em>* These are placeholder examples. Your success story could be featured here!</em></p>
+                    </div>
                 </div>
+
+
             </div>
         </div>
 
@@ -1476,7 +2960,7 @@
                         </div>
                         <div>
                             <h4>Phone</h4>
-                            <p>+91 98765 43210</p>
+                            <p>+91 86029 78557</p>
                         </div>
                     </div>
                     
@@ -1486,7 +2970,7 @@
                         </div>
                         <div>
                             <h4>Email</h4>
-                            <p>info@codemasters-raipur.com</p>
+                            <p>ankit.gautamp23@gmail.com</p>
                         </div>
                     </div>
                     
@@ -1496,7 +2980,7 @@
                         </div>
                         <div>
                             <h4>Hours</h4>
-                            <p>Mon-Sat: 9:00 AM - 8:00 PM</p>
+                            <p>Mon-Sat: 11:00 AM - 7:00 PM</p>
                         </div>
                     </div>
                 </div>
@@ -1520,6 +3004,12 @@
                         </div>
                         
                         <div class="form-group">
+                            <label for="contactReferralCode">Referral Code (Optional)</label>
+                            <input type="text" id="contactReferralCode" name="contactReferralCode" placeholder="e.g., Ankit Gautam + 8602978557">
+                            <small class="form-help">Enter referral code if someone referred you</small>
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" placeholder="Your message or questions..." required></textarea>
                         </div>
@@ -1540,7 +3030,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 CodeMasters Raipur. All rights reserved. Building the future of software engineering in Chhattisgarh.</p>
+            <p>&copy; 2025 CodeFounders Raipur. All rights reserved. Building the future of software engineering in Chhattisgarh.</p>
         </div>
     </footer>
 
@@ -1570,6 +3060,12 @@
                 <div class="form-group">
                     <label for="education">Current Education/Experience</label>
                     <input type="text" id="education" name="education" placeholder="e.g., B.Tech CSE, Working Professional" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="referralCode">Referral Code (Optional)</label>
+                    <input type="text" id="referralCode" name="referralCode" placeholder="e.g., Ankit Gautam + 8602978557">
+                    <small class="form-help">Enter the referral code if someone referred you to CodeFounders</small>
                 </div>
                 
                 <div style="background: #f8fafc; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
@@ -1681,7 +3177,8 @@
                 name: formData.get('fullName'),
                 email: formData.get('emailAddress'),
                 phone: formData.get('phoneNumber'),
-                education: formData.get('education')
+                education: formData.get('education'),
+                referralCode: formData.get('referralCode')
             };
 
             // Razorpay payment integration
@@ -1689,7 +3186,7 @@
                 key: 'rzp_test_1234567890', // Replace with your Razorpay key
                 amount: 50000, // 500 INR in paise
                 currency: 'INR',
-                name: 'CodeMasters Raipur',
+                name: 'CodeFounders Raipur',
                 description: 'Entrance Test Fee',
                 image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDApIi8+CjxwYXRoIGQ9Ik0xMiAxNkgyOFYyNEgxMlYxNloiIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MCIgeDE9IjAiIHkxPSIwIiB4Mj0iNDAiIHkyPSI0MCI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRjZCMzUiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOEI1Q0Y2Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHN2Zz4K',
                 prefill: {
@@ -1698,7 +3195,8 @@
                     contact: studentData.phone
                 },
                 notes: {
-                    education: studentData.education
+                    education: studentData.education,
+                    referralCode: studentData.referralCode || 'No referral'
                 },
                 theme: {
                     color: '#ff6b35'
@@ -1900,7 +3398,7 @@
                 
                 // Show selected batch content
                 const batchType = btn.dataset.batch;
-                const contentId = batchType === 'current' ? 'current-batch' : `${batchType}-content`;
+                const contentId = `${batchType}-batch`;
                 const selectedContent = document.getElementById(contentId);
                 if (selectedContent) {
                     selectedContent.style.display = 'block';
@@ -2022,4 +3520,5 @@
         document.head.appendChild(notificationStyle);
     </script>
 </body>
+</html>
 </html>
