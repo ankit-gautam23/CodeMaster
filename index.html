@@ -1901,6 +1901,150 @@
             font-weight: 500;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        
+        /* Course Overview Styles */
+        .course-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .overview-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .overview-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .overview-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        /* Curriculum Section Styles */
+        .curriculum-section {
+            margin: 2rem 0;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+        
+        .curriculum-toggle {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+        
+        .curriculum-toggle:hover {
+            background: linear-gradient(135deg, #e55a2b, #7c3aed);
+            transform: translateY(-1px);
+        }
+        
+        .curriculum-toggle i {
+            margin-right: 0.5rem;
+        }
+        
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .curriculum-toggle.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        .curriculum-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+        
+        .curriculum-content.active {
+            max-height: 2000px;
+            padding: 1.5rem;
+        }
+        
+        .curriculum-module {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .curriculum-module h5 {
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .curriculum-module ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .curriculum-module li {
+            padding: 0.25rem 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .curriculum-module strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        /* Responsive Design for Curriculum */
+        @media (max-width: 768px) {
+            .curriculum-toggle {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .curriculum-content.active {
+                padding: 1rem;
+            }
+            
+            .curriculum-module {
+                padding: 0.75rem;
+            }
+            
+            .curriculum-module h5 {
+                font-size: 0.9rem;
+            }
+            
+            .curriculum-module li {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2255,6 +2399,22 @@
             <h2 class="section-title fade-in">Our Full-Stack Development Tracks</h2>
             <p class="section-subtitle fade-in">Choose your preferred technology stack. All tracks include Vibecoding as a complimentary bonus!</p>
             
+            <!-- Course Overview -->
+            <div class="course-overview fade-in">
+                <div class="overview-card">
+                    <h3><i class="fas fa-graduation-cap"></i> What You'll Learn</h3>
+                    <p>Each track is designed to make you a complete full-stack developer with real-world project experience. You'll build, deploy, and scale applications that solve actual problems.</p>
+                </div>
+                <div class="overview-card">
+                    <h3><i class="fas fa-rocket"></i> Project-Based Learning</h3>
+                    <p>Build 3-4 real projects including a final product that goes live. Learn by doing, not just theory. Every concept is applied to real-world scenarios.</p>
+                </div>
+                <div class="overview-card">
+                    <h3><i class="fas fa-users"></i> Industry-Ready Skills</h3>
+                    <p>Master the exact technologies used by top companies. Learn best practices, code reviews, and industry standards that employers actually want.</p>
+                </div>
+            </div>
+            
             <div class="courses-grid">
                 <!-- Java Full Stack Track -->
                 <div class="course-card fade-in">
@@ -2274,6 +2434,60 @@
                             <span class="tech-item">AWS</span>
                         </div>
                     </div>
+                    
+                    <!-- Detailed Curriculum -->
+                    <div class="curriculum-section">
+                        <button class="curriculum-toggle" onclick="toggleCurriculum('java-curriculum')">
+                            <i class="fas fa-book"></i> View Detailed Curriculum
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </button>
+                        
+                        <div class="curriculum-content" id="java-curriculum">
+                            <div class="curriculum-module">
+                                <h5>Month 1-2: Java & Spring Boot Foundation</h5>
+                                <ul>
+                                    <li><strong>Java Core:</strong> OOP, Collections, Streams, Lambda, Exception Handling</li>
+                                    <li><strong>Spring Framework:</strong> Dependency Injection, AOP, Spring MVC</li>
+                                    <li><strong>Spring Boot:</strong> Auto-configuration, Starter POMs, Actuator</li>
+                                    <li><strong>Database:</strong> JPA/Hibernate, MySQL/PostgreSQL, Query Optimization</li>
+                                    <li><strong>REST APIs:</strong> Design patterns, Security, Documentation (Swagger)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 3: React Frontend Development</h5>
+                                <ul>
+                                    <li><strong>React Fundamentals:</strong> Components, Props, State, Hooks</li>
+                                    <li><strong>Advanced React:</strong> Context API, Redux, React Router</li>
+                                    <li><strong>UI/UX:</strong> Material-UI, Styled Components, Responsive Design</li>
+                                    <li><strong>State Management:</strong> Redux Toolkit, Async operations</li>
+                                    <li><strong>Testing:</strong> Jest, React Testing Library</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 4: DevOps & Cloud</h5>
+                                <ul>
+                                    <li><strong>Docker:</strong> Containers, Images, Docker Compose, Multi-stage builds</li>
+                                    <li><strong>AWS:</strong> EC2, RDS, S3, CloudFront, Route 53</li>
+                                    <li><strong>CI/CD:</strong> GitHub Actions, AWS CodePipeline</li>
+                                    <li><strong>Monitoring:</strong> CloudWatch, Application Performance Monitoring</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 5-6: Advanced Topics & Projects</h5>
+                                <ul>
+                                    <li><strong>Microservices:</strong> Architecture, Service Discovery, API Gateway</li>
+                                    <li><strong>Security:</strong> JWT, OAuth2, Spring Security</li>
+                                    <li><strong>Performance:</strong> Caching (Redis), Database optimization</li>
+                                    <li><strong>Real Projects:</strong> E-commerce platform, Task management system</li>
+                                    <li><strong>Final Product:</strong> Build and deploy your own startup idea</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="course-features">
                         <div class="feature">
                             <i class="fas fa-check"></i>
@@ -2320,6 +2534,60 @@
                             <span class="tech-item">AWS</span>
                         </div>
                     </div>
+                    
+                    <!-- Detailed Curriculum -->
+                    <div class="curriculum-section">
+                        <button class="curriculum-toggle" onclick="toggleCurriculum('python-curriculum')">
+                            <i class="fas fa-book"></i> View Detailed Curriculum
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </button>
+                        
+                        <div class="curriculum-content" id="python-curriculum">
+                            <div class="curriculum-module">
+                                <h5>Month 1-2: Python & Flask Foundation</h5>
+                                <ul>
+                                    <li><strong>Python Core:</strong> Data structures, OOP, Decorators, Generators, Async/Await</li>
+                                    <li><strong>Flask Framework:</strong> Routes, Blueprints, Templates, Forms, Extensions</li>
+                                    <li><strong>Database:</strong> SQLAlchemy ORM, PostgreSQL, Database migrations</li>
+                                    <li><strong>REST APIs:</strong> Flask-RESTful, JWT authentication, API documentation</li>
+                                    <li><strong>Testing:</strong> Pytest, Unit testing, Integration testing</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 3: React Frontend & Integration</h5>
+                                <ul>
+                                    <li><strong>React Development:</strong> Functional components, Hooks, Custom hooks</li>
+                                    <li><strong>State Management:</strong> Context API, Zustand, React Query</li>
+                                    <li><strong>API Integration:</strong> Axios, Error handling, Loading states</li>
+                                    <li><strong>UI Libraries:</strong> Tailwind CSS, Headless UI, Framer Motion</li>
+                                    <li><strong>Real-time Features:</strong> WebSockets, Server-Sent Events</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 4: DevOps & Cloud Deployment</h5>
+                                <ul>
+                                    <li><strong>Docker:</strong> Containerization, Multi-stage builds, Docker Compose</li>
+                                    <li><strong>AWS Services:</strong> EC2, RDS, S3, Lambda, API Gateway</li>
+                                    <li><strong>CI/CD:</strong> GitHub Actions, Automated testing, Deployment pipelines</li>
+                                    <li><strong>Monitoring:</strong> Logging, Error tracking, Performance monitoring</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 5-6: Advanced Features & Projects</h5>
+                                <ul>
+                                    <li><strong>Microservices:</strong> Service architecture, Inter-service communication</li>
+                                    <li><strong>Advanced Python:</strong> Celery, Redis, Background tasks</li>
+                                    <li><strong>Security:</strong> OAuth2, CORS, Rate limiting, Input validation</li>
+                                    <li><strong>Real Projects:</strong> Social media platform, Content management system</li>
+                                    <li><strong>Final Product:</strong> Build and launch your AI-powered application</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="course-features">
                         <div class="feature">
                             <i class="fas fa-check"></i>
@@ -2366,6 +2634,61 @@
                             <span class="tech-item">AWS</span>
                         </div>
                     </div>
+                    
+                    <!-- Detailed Curriculum -->
+                    <div class="curriculum-section">
+                        <button class="curriculum-toggle" onclick="toggleCurriculum('javascript-curriculum')">
+                            <i class="fas fa-book"></i> View Detailed Curriculum
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </button>
+                        
+                        <div class="curriculum-content" id="javascript-curriculum">
+                            <div class="curriculum-module">
+                                <h5>Month 1-2: JavaScript & Node.js Foundation</h5>
+                                <ul>
+                                    <li><strong>Modern JavaScript:</strong> ES6+, Async/Await, Promises, Modules</li>
+                                    <li><strong>Node.js Core:</strong> Event loop, Streams, Buffers, File system</li>
+                                    <li><strong>Express.js:</strong> Routing, Middleware, Error handling, Validation</li>
+                                    <li><strong>Database:</strong> MongoDB with Mongoose, Redis, Database design</li>
+                                    <li><strong>Authentication:</strong> JWT, Passport.js, Role-based access control</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 3: React Frontend Development</h5>
+                                <ul>
+                                    <li><strong>React Fundamentals:</strong> Components, JSX, Props, State management</li>
+                                    <li><strong>Advanced React:</strong> Custom hooks, Context API, React Router v6</li>
+                                    <li><strong>State Management:</strong> Redux Toolkit, Zustand, React Query</li>
+                                    <li><strong>Styling:</strong> CSS-in-JS, Styled Components, Tailwind CSS</li>
+                                    <li><strong>Testing:</strong> Jest, React Testing Library, E2E with Cypress</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 4: Real-time & Advanced Features</h5>
+                                <ul>
+                                    <li><strong>Real-time Communication:</strong> Socket.io, WebRTC, Live chat</li>
+                                    <li><strong>Advanced Node.js:</strong> Clustering, Performance optimization</li>
+                                    <li><strong>Microservices:</strong> Service architecture, API Gateway</li>
+                                    <li><strong>Message Queues:</strong> Redis, Bull queue, Background jobs</li>
+                                    <li><strong>File Handling:</strong> Multer, Cloud storage, Image processing</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 5-6: DevOps & Projects</h5>
+                                <ul>
+                                    <li><strong>Docker & Deployment:</strong> Containerization, Multi-stage builds</li>
+                                    <li><strong>AWS Cloud:</strong> EC2, RDS, S3, CloudFront, Lambda</li>
+                                    <li><strong>CI/CD:</strong> GitHub Actions, Automated testing, Deployment</li>
+                                    <li><strong>Real Projects:</strong> Real-time chat app, Video streaming platform</li>
+                                    <li><strong>Final Product:</strong> Build and launch your JavaScript-powered startup</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="course-features">
                         <div class="feature">
                             <i class="fas fa-check"></i>
@@ -2412,6 +2735,61 @@
                             <span class="tech-item">Vibecoding</span>
                         </div>
                     </div>
+                    
+                    <!-- Detailed Curriculum -->
+                    <div class="curriculum-section">
+                        <button class="curriculum-toggle" onclick="toggleCurriculum('ai-curriculum')">
+                            <i class="fas fa-book"></i> View Detailed Curriculum
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </button>
+                        
+                        <div class="curriculum-content" id="ai-curriculum">
+                            <div class="curriculum-module">
+                                <h5>Month 1-2: Python & ML Foundation</h5>
+                                <ul>
+                                    <li><strong>Python for AI:</strong> NumPy, Pandas, Matplotlib, Scikit-learn</li>
+                                    <li><strong>Machine Learning:</strong> Supervised/Unsupervised learning, Model evaluation</li>
+                                    <li><strong>Deep Learning:</strong> Neural networks, TensorFlow/PyTorch, CNN/RNN</li>
+                                    <li><strong>Data Processing:</strong> Data cleaning, Feature engineering, ETL pipelines</li>
+                                    <li><strong>MLOps:</strong> Model versioning, Experiment tracking, MLflow</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 3: Natural Language Processing</h5>
+                                <ul>
+                                    <li><strong>NLP Fundamentals:</strong> Text preprocessing, Tokenization, Embeddings</li>
+                                    <li><strong>Transformer Models:</strong> BERT, GPT, T5, Attention mechanisms</li>
+                                    <li><strong>RAG Systems:</strong> Vector databases, Retrieval systems, Generation</li>
+                                    <li><strong>LangChain:</strong> Prompt engineering, Chain construction, Memory</li>
+                                    <li><strong>Vector Databases:</strong> Pinecone, Weaviate, Chroma, FAISS</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 4: Generative AI & Applications</h5>
+                                <ul>
+                                    <li><strong>Generative AI:</strong> GPT models, DALL-E, Stable Diffusion</li>
+                                    <li><strong>AI APIs:</strong> OpenAI, Anthropic, Hugging Face, Custom models</li>
+                                    <li><strong>AI Integration:</strong> API development, Rate limiting, Cost optimization</li>
+                                    <li><strong>Prompt Engineering:</strong> Advanced prompting, Few-shot learning</li>
+                                    <li><strong>AI Ethics:</strong> Bias detection, Fairness, Responsible AI</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="curriculum-module">
+                                <h5>Month 5-6: Vibecoding & Real Projects</h5>
+                                <ul>
+                                    <li><strong>Vibecoding Mastery:</strong> AI-assisted development, Code generation</li>
+                                    <li><strong>AI-Powered Tools:</strong> GitHub Copilot, Cursor, AI code review</li>
+                                    <li><strong>Full-Stack AI:</strong> React + Python + AI integration</li>
+                                    <li><strong>Real Projects:</strong> AI chatbot, Content generation platform</li>
+                                    <li><strong>Final Product:</strong> Build and launch your AI-powered startup</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="course-features">
                         <div class="feature">
                             <i class="fas fa-check"></i>
@@ -3098,6 +3476,20 @@
                 }
             });
         });
+        
+        // Curriculum toggle functionality
+        function toggleCurriculum(curriculumId) {
+            const content = document.getElementById(curriculumId);
+            const toggle = content.previousElementSibling;
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                toggle.classList.remove('active');
+            } else {
+                content.classList.add('active');
+                toggle.classList.add('active');
+            }
+        }
 
         // Header scroll effect
         window.addEventListener('scroll', () => {
