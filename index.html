@@ -107,6 +107,8 @@
             color: var(--light);
             position: relative;
             overflow: hidden;
+            padding: 2rem 0;
+            margin-top: 80px; /* Account for fixed header */
         }
 
         .hero::before {
@@ -117,13 +119,35 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            opacity: 0.2;
+            animation: float 20s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 10;
             text-align: center;
+            width: 100%;
+            padding: 2rem 0;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 10;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
         }
 
         .hero h1 {
@@ -131,6 +155,8 @@
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-subtitle {
@@ -140,6 +166,8 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .cta-button {
@@ -158,6 +186,13 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+            50% { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 10px rgba(255, 255, 255, 0.1); }
+            100% { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
         }
 
         .hero-tagline {
@@ -211,6 +246,38 @@
             font-size: 0.9rem;
         }
 
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .feature-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature-badge:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .feature-badge i {
+            color: #ffd700;
+            font-size: 1rem;
+        }
+
         /* Stats Section */
         .stats {
             padding: 4rem 0;
@@ -241,6 +308,624 @@
         .about {
             padding: 6rem 0;
             background: #f8fafc;
+        }
+
+        /* Live Sessions Section */
+        .live-sessions {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--light);
+        }
+
+        .live-sessions .section-title {
+            color: var(--light);
+            background: none;
+            -webkit-text-fill-color: var(--light);
+        }
+
+        .live-sessions .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .live-sessions-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .live-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .live-feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .live-feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon i {
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+
+        .live-feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .live-feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .schedule-info {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .schedule-info span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .schedule-info i {
+            color: #ffd700;
+        }
+
+        .live-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        /* Students Section */
+        .students {
+            padding: 6rem 0;
+            background: #f8fafc;
+        }
+
+        .students-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .registration-form {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .registration-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .registration-form > p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .student-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-btn {
+            background: var(--gradient);
+            color: var(--light);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .students-list {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .students-list h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .students-list > p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .students-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .student-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .student-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .student-card.coming-soon {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-left: 4px solid var(--accent);
+        }
+
+        .student-card.coming-soon .student-avatar {
+            background: var(--accent);
+        }
+
+        .student-card.coming-soon:hover {
+            background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+            transform: translateX(5px) scale(1.02);
+        }
+
+        .student-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.2rem;
+        }
+
+        .student-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .student-college {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .enrollment-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-badge {
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .students-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .students-stats .stat-item {
+            text-align: center;
+        }
+
+        .students-stats h4 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .students-stats p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Placement Assistance Section */
+        .placement-assistance {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--light);
+        }
+
+        .placement-assistance .section-title {
+            color: var(--light);
+            background: none;
+            -webkit-text-fill-color: var(--light);
+        }
+
+        .placement-assistance .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .placement-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .placement-categories {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .placement-category {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .placement-category:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-icon i {
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+
+        .placement-category h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .category-description {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .placement-timeline {
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-marker {
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .timeline-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: var(--light);
+        }
+
+        .timeline-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .placement-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .feature-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--light);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .placement-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-highlight:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-highlight h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-highlight p {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .placement-note {
+            margin-top: 3rem;
+        }
+
+        .placement-note .note-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+        }
+
+        .placement-note .note-card i {
+            color: #ffd700;
+        }
+
+        .placement-note .note-card h4 {
+            color: var(--light);
+        }
+
+        .placement-note .note-card p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            padding: 6rem 0;
+            background: #f8fafc;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .reason-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .reason-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--light);
+            font-size: 2rem;
+        }
+
+        .reason-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .reason-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* UPI Payment Styling */
+        .upi-container {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upi-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .upi-container::after {
+            content: '🔒';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .upi-container:hover::after {
+            content: '🔓';
+            animation: pulse 1s infinite;
+        }
+
+        .upi-container.revealed::after {
+            content: '💳';
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes reveal {
+            0% { opacity: 0.7; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .upi-container.revealed #upiId {
+            animation: reveal 0.5s ease-out;
+        }
+
+        .payment-method {
+            transition: all 0.3s ease;
+        }
+
+        .payment-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
         .section-title {
@@ -711,7 +1396,9 @@
             }
 
             .about-content,
-            .contact-content {
+            .contact-content,
+            .live-sessions-content,
+            .students-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -785,6 +1472,53 @@
 
             .course-card.featured:hover {
                 transform: translateY(-5px);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-badge {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .live-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .students-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .placement-content {
+                grid-template-columns: 1fr;
+            }
+
+            .placement-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .timeline-marker {
+                align-self: flex-start;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reason-card {
+                padding: 1.5rem;
             }
 
             .highlight-content {
@@ -2057,13 +2791,12 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#live-sessions">Live Sessions</a></li>
+                        <li><a href="#placement-assistance">Placement</a></li>
                         <li><a href="#courses">Courses</a></li>
                         <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#referral">Referral</a></li>
+                        <li><a href="#students">Students</a></li>
                         <li><a href="#test">Entrance Test</a></li>
-                        <li><a href="#leaderboard">Leaderboard</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -2088,6 +2821,10 @@
                 </div>
                 <div class="hero-highlights">
                     <div class="highlight-item">
+                        <i class="fas fa-video"></i>
+                        <span>Live Sessions Monday-Saturday</span>
+                    </div>
+                    <div class="highlight-item">
                         <i class="fas fa-rocket"></i>
                         <span>Build & Launch Real Products</span>
                     </div>
@@ -2098,6 +2835,20 @@
                     <div class="highlight-item">
                         <i class="fas fa-chart-line"></i>
                         <span>Pre-Seed Investment Ready</span>
+                    </div>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-badge">
+                        <i class="fas fa-clock"></i>
+                        <span>No Recorded Sessions - 100% Live Teaching</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Online & Offline (Raipur, Chhattisgarh)</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Industry Experts as Mentors</span>
                     </div>
                 </div>
                 <a href="#test" class="cta-button">
@@ -2112,20 +2863,20 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>50</h3>
-                    <p>Selected Students</p>
+                    <h3>6</h3>
+                    <p>Months Program</p>
                 </div>
                 <div class="stat-item">
-                    <h3>6</h3>
-                    <p>Months to Product</p>
+                    <h3>100%</h3>
+                    <p>Live Sessions</p>
                 </div>
                 <div class="stat-item">
                     <h3>₹500</h3>
                     <p>Referral Bonus</p>
                 </div>
                 <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Support Available</p>
+                    <h3>11AM-6PM</h3>
+                    <p>Daily Support</p>
                 </div>
             </div>
         </div>
@@ -2213,80 +2964,231 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <!-- 
-    <section id="testimonials" class="testimonials">
+    <!-- Live Sessions Section -->
+    <section id="live-sessions" class="live-sessions">
         <div class="container">
-            <h2 class="section-title fade-in">What Our Students Say</h2>
-            <p class="section-subtitle fade-in">Hear from our successful graduates who transformed their careers with CodeFounders</p>
+            <h2 class="section-title fade-in">100% Live Sessions - No Recorded Content</h2>
+            <p class="section-subtitle fade-in">Experience real-time learning with industry experts. Every session is live, interactive, and designed to make you a product founder.</p>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+            <div class="live-sessions-content">
+                <div class="live-features fade-in">
+                    <div class="live-feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
                         </div>
-                        <p>"CodeFounders completely changed my career trajectory. From a fresher to landing a ₹12 LPA job at a top tech company in just 8 months. The hands-on projects and mentorship were game-changing!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RK</div>
-                        <div class="author-info">
-                            <h4>Rahul Kumar</h4>
-                            <p>Software Engineer @ TechCorp</p>
-                            <span class="package">₹12 LPA</span>
+                        <h3>Live Teaching Monday-Saturday</h3>
+                        <p>6 days a week of live, interactive sessions with real-time doubt clearing. No pre-recorded videos - every class is fresh and current.</p>
+                        <div class="schedule-info">
+                            <span><i class="fas fa-clock"></i> 2-3 hours daily</span>
+                            <span><i class="fas fa-calendar"></i> Mon-Sat</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                    
+                    <div class="live-feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
                         </div>
-                        <p>"The AI integration training was revolutionary! I learned to code both traditionally and with AI assistance. Now I'm building cutting-edge applications that actually solve real problems."</p>
+                        <h3>Interactive Doubt Clearing</h3>
+                        <p>Ask questions anytime during sessions. Get instant answers from mentors and peers. No waiting for email responses.</p>
+                        <div class="schedule-info">
+                            <span><i class="fas fa-comments"></i> Real-time Q&A</span>
+                            <span><i class="fas fa-hand-raise"></i> Instant Support</span>
+                        </div>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SP</div>
-                        <div class="author-info">
-                            <h4>Shreya Patel</h4>
-                            <p>Full Stack Developer @ StartupX</p>
-                            <span class="package">₹15 LPA</span>
+                    
+                    <div class="live-feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h3>Always Open Support Room</h3>
+                        <p>Online students can join our support room anytime between 11:00 AM - 6:00 PM for instant help with any coding challenges.</p>
+                        <div class="schedule-info">
+                            <span><i class="fas fa-clock"></i> 11 AM - 6 PM</span>
+                            <span><i class="fas fa-headset"></i> Daily Support</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"The placement support was incredible. They didn't just teach coding - they taught me how to think like an engineer. Got placed within 2 months of completing the program!"</p>
+                <div class="live-stats fade-in">
+                    <div class="stat-card">
+                        <h3>6</h3>
+                        <p>Days per Week</p>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AM</div>
-                        <div class="author-info">
-                            <h4>Arjun Mehta</h4>
-                            <p>Backend Engineer @ FinTech Solutions</p>
-                            <span class="package">₹18 LPA</span>
-                        </div>
+                    <div class="stat-card">
+                        <h3>2-3</h3>
+                        <p>Hours Daily</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <p>Live Sessions</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>24/7</h3>
+                        <p>Support Available</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    -->
+
+    <!-- Placement Assistance Section -->
+    <section id="placement-assistance" class="placement-assistance">
+        <div class="container">
+            <h2 class="section-title fade-in">Placement Assistance for Every Student</h2>
+            <p class="section-subtitle fade-in">We provide targeted placement support based on your academic year and career goals</p>
+            
+            <div class="placement-content">
+                <div class="placement-categories fade-in">
+                    <div class="placement-category">
+                        <div class="category-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>3rd Year, Final Year & Freshers</h3>
+                        <p class="category-description">Immediate placement assistance after 5 months into the course</p>
+                        <div class="placement-timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-marker">Month 5</span>
+                                <div class="timeline-content">
+                                    <h4>Placement Preparation Begins</h4>
+                                    <p>Resume building, interview preparation, and mock interviews</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-marker">Month 6</span>
+                                <div class="timeline-content">
+                                    <h4>Active Placement Support</h4>
+                                    <p>Direct company connections, placement drives, and career guidance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="placement-features">
+                            <span class="feature-tag">Resume Building</span>
+                            <span class="feature-tag">Mock Interviews</span>
+                            <span class="feature-tag">Company Connections</span>
+                            <span class="feature-tag">Career Guidance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="placement-category">
+                        <div class="category-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>1st Year & 2nd Year Students</h3>
+                        <p class="category-description">Lifetime placement support when you reach 3rd or 4th year</p>
+                        <div class="placement-timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-marker">Now</span>
+                                <div class="timeline-content">
+                                    <h4>Skill Development</h4>
+                                    <p>Focus on building strong technical foundation and projects</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-marker">3rd/4th Year</span>
+                                <div class="timeline-content">
+                                    <h4>Placement Activation</h4>
+                                    <p>Contact us anytime to activate your placement assistance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="placement-features">
+                            <span class="feature-tag">Lifetime Support</span>
+                            <span class="feature-tag">Skill Building</span>
+                            <span class="feature-tag">Project Portfolio</span>
+                            <span class="feature-tag">Future Ready</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="placement-stats fade-in">
+                    <div class="stat-highlight">
+                        <h3>100%</h3>
+                        <p>Placement Support</p>
+                    </div>
+                    <div class="stat-highlight">
+                        <h3>Industry</h3>
+                        <p>Ready Skills</p>
+                    </div>
+                    <div class="stat-highlight">
+                        <h3>Live</h3>
+                        <p>Projects</p>
+                    </div>
+                    <div class="stat-highlight">
+                        <h3>11AM-6PM</h3>
+                        <p>Career Support</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="placement-note fade-in">
+                <div class="note-card">
+                    <i class="fas fa-info-circle"></i>
+                    <div>
+                        <h4>Lifetime Placement Support</h4>
+                        <p><strong>For 1st & 2nd Year Students:</strong> Complete the course now, contact us when you reach 3rd or 4th year for immediate placement assistance. Your skills will be ready, and we'll help you land your dream job!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose CodeFounders?</h2>
+            <p class="section-subtitle fade-in">We're building something different - a program that focuses on real-world impact and product development</p>
+            
+            <div class="reasons-grid">
+                <div class="reason-card fade-in">
+                    <div class="reason-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Product-First Approach</h3>
+                    <p>We don't just teach coding - we teach you to build products that solve real problems and can go live with real users.</p>
+                </div>
+                
+                <div class="reason-card fade-in">
+                    <div class="reason-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Founding Team Mentality</h3>
+                    <p>Join as a founding team member, not just a student. Learn to think like an entrepreneur and build like a founder.</p>
+                </div>
+                
+                <div class="reason-card fade-in">
+                    <div class="reason-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>100% Live Learning</h3>
+                    <p>No recorded sessions. Every class is live, interactive, and designed to keep you engaged and learning actively.</p>
+                </div>
+                
+                <div class="reason-card fade-in">
+                    <div class="reason-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Investment Ready</h3>
+                    <p>Build products that are actually investment-ready. Learn to pitch, scale, and prepare for pre-seed funding.</p>
+                </div>
+                
+                <div class="reason-card fade-in">
+                    <div class="reason-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Industry Experts</h3>
+                    <p>Learn from mentors who have built and scaled real products. Get insights from actual industry professionals.</p>
+                </div>
+                
+                <div class="reason-card fade-in">
+                    <div class="reason-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Always Available Support</h3>
+                    <p>Daily support room from 11 AM to 6 PM. Get help whenever you need it, not just during class hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Test Section -->
     <section id="test" class="test-section">
@@ -2331,7 +3233,7 @@
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h4>Make Payment</h4>
-                            <p>Pay ₹500 using UPI QR code or online payment below</p>
+                            <p>Pay ₹500 using UPI ID (click above to reveal)</p>
                         </div>
                     </div>
                     
@@ -2354,17 +3256,16 @@
 
                 <!-- Payment Options -->
                 <div class="payment-options" style="display: flex; justify-content: center;">
-                    <div class="payment-method" onclick="selectPayment('qr')" style="text-align: center; max-width: 400px;">
-                        <h4><i class="fas fa-qrcode"></i> UPI QR Payment</h4>
-                        <div class="qr-container" style="margin: 0 auto;">
-                            <img src="QRCode.jpg" alt="UPI QR Code" class="qr-code-image">
-                            <div class="qr-overlay">
-                                <small style="color: var(--primary); font-weight: 600;">Scan & Pay ₹500</small>
-                            </div>
+                    <div class="payment-method" style="text-align: center; max-width: 400px; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h4><i class="fas fa-mobile-alt"></i> UPI Payment</h4>
+                        <div class="upi-container" style="margin: 1.5rem auto; padding: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;" onclick="openUPIApp()">
+                            <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">UPI ID</div>
+                            <div id="upiId" style="font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 1rem; opacity: 0.7;">Click to reveal</div>
+                            <div style="font-size: 0.9rem; opacity: 0.9;">Amount: ₹500</div>
+                            <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem;">Click to reveal UPI ID & open payment app</div>
                         </div>
-                        <p style="color: var(--gray); font-size: 0.9rem;">Scan with any UPI app<br>Take screenshot of payment</p>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Step 1: Click to reveal UPI ID<br>Step 2: Click again to open payment app</p>
                     </div>
-                    
                 </div>
 
                 <!-- Google Form Link -->
@@ -2949,6 +3850,148 @@
         </div>
     </section>
 
+    <!-- Students Section -->
+    <section id="students" class="students">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Student Community</h2>
+            <p class="section-subtitle fade-in">Meet our students who are building their future with CodeFounders</p>
+            
+            <div class="students-content">
+                <!-- Registration form commented out
+                <div class="registration-form fade-in">
+                    <h3>Register for CodeFounders</h3>
+                    <p>Fill out the form below to join our next batch</p>
+                    
+                    <form id="studentRegistrationForm" class="student-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentName">Full Name *</label>
+                                <input type="text" id="studentName" name="studentName" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentEmail">Email Address *</label>
+                                <input type="email" id="studentEmail" name="studentEmail" required placeholder="Enter your email">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentPhone">Phone Number *</label>
+                                <input type="tel" id="studentPhone" name="studentPhone" required placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentCollege">College/University *</label>
+                                <input type="text" id="studentCollege" name="studentCollege" required placeholder="Enter your college name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentCourse">Preferred Course</label>
+                                <select id="studentCourse" name="studentCourse">
+                                    <option value="">Select your preferred course</option>
+                                    <option value="Java Full Stack">Java Full Stack</option>
+                                    <option value="Python Full Stack">Python Full Stack</option>
+                                    <option value="JavaScript Full Stack">JavaScript Full Stack</option>
+                                    <option value="AI/ML with GenAI">AI/ML with GenAI</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentMode">Learning Mode</label>
+                                <select id="studentCourse" name="studentMode">
+                                    <option value="">Select learning mode</option>
+                                    <option value="Online">Online</option>
+                                    <option value="Offline">Offline (Raipur)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="studentMessage">Message (Optional)</label>
+                            <textarea id="studentMessage" name="studentMessage" rows="3" placeholder="Tell us about your goals or any questions..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Register Now
+                        </button>
+                    </form>
+                </div>
+                -->
+                
+                <div class="students-list fade-in">
+                    <h3>Recent Enrollments</h3>
+                    <p>Students who recently joined CodeFounders</p>
+                    
+                    <div class="students-grid" id="studentsGrid">
+                        <!-- Students will be loaded here dynamically -->
+                        <div class="student-card coming-soon">
+                            <div class="student-avatar">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="student-info">
+                                <h4>Be the First!</h4>
+                                <p class="student-college">Join Our Inaugural Batch</p>
+                                <p class="enrollment-date">Starting Soon</p>
+                                <span class="course-badge">Early Bird Advantage</span>
+                            </div>
+                        </div>
+                        
+                        <div class="student-card coming-soon">
+                            <div class="student-avatar">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="student-info">
+                                <h4>Pioneer Student</h4>
+                                <p class="student-college">Shape the Future</p>
+                                <p class="enrollment-date">Limited Seats</p>
+                                <span class="course-badge">Founding Member</span>
+                            </div>
+                        </div>
+                        
+                        <div class="student-card coming-soon">
+                            <div class="student-avatar">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="student-info">
+                                <h4>Elite Program</h4>
+                                <p class="student-college">Selective Admission</p>
+                                <p class="enrollment-date">Quality Over Quantity</p>
+                                <span class="course-badge">Premium Learning</span>
+                            </div>
+                        </div>
+                        
+                        <div class="student-card coming-soon">
+                            <div class="student-avatar">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div class="student-info">
+                                <h4>Exclusive Access</h4>
+                                <p class="student-college">Personal Mentorship</p>
+                                <p class="enrollment-date">Direct Guidance</p>
+                                <span class="course-badge">1-on-1 Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="students-stats">
+                        <div class="stat-item">
+                            <h4>Open</h4>
+                            <p>For Enrollment</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>All</h4>
+                            <p>Colleges Welcome</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>100%</h4>
+                            <p>Live Learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Referral Program Section -->
     <section id="referral" class="referral">
         <div class="container">
@@ -3348,7 +4391,7 @@
                         </div>
                         <div>
                             <h4>Email</h4>
-                            <p>ankit.gautamp23@gmail.com</p>
+                            <p>from.codefounders@gmail.com</p>
                         </div>
                     </div>
                     
@@ -3373,7 +4416,7 @@
                         
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <input type="email" id="email" name="email" placeholder="your.email@codefounders.com" required>
                         </div>
                         
                         <div class="form-group">
@@ -3427,7 +4470,7 @@
                 
                 <div class="form-group">
                     <label for="emailAddress">Email Address</label>
-                    <input type="email" id="emailAddress" name="emailAddress" placeholder="your.email@example.com" required>
+                                            <input type="email" id="emailAddress" name="emailAddress" placeholder="your.email@codefounders.com" required>
                 </div>
                 
                 <div class="form-group">
@@ -3702,15 +4745,16 @@
         document.head.appendChild(style);
 
         // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            const rate = scrolled * -0.5;
-            
-            if (hero) {
-                hero.style.transform = `translateY(${rate}px)`;
-            }
-        });
+        // Parallax effect removed to fix hero section visibility
+        // window.addEventListener('scroll', () => {
+        //     const scrolled = window.pageYOffset;
+        //     const hero = document.querySelector('.hero');
+        //     const rate = scrolled * -0.5;
+        //     
+        //     if (hero) {
+        //         hero.style.transform = `translateY(${rate}px)`;
+        //     }
+        // });
 
         // Add number counter animation for stats
         function animateNumbers() {
@@ -3749,19 +4793,109 @@
             stats.forEach(stat => observer.observe(stat));
         }
         
-        // Payment method selection
-        function selectPayment(method) {
-            document.querySelectorAll('.payment-method').forEach(el => {
-                el.classList.remove('active');
-            });
+
+
+        // Open UPI App function
+        function openUPIApp() {
+            const upiId = 'ankit.gautam42@ybl';
+            const amount = '500';
+            const upiDisplay = document.getElementById('upiId');
             
-            if (method === 'qr') {
-                document.querySelector('.payment-method').classList.add('active');
-                // You can add QR code display logic here
-                alert('📱 QR Code payment selected! \n\n1. Scan the QR code with any UPI app\n2. Pay ₹500\n3. Take screenshot\n4. Fill the Google Form with payment proof');
-            } else {
-                document.querySelectorAll('.payment-method')[1].classList.add('active');
+            // First click: reveal UPI ID
+            if (upiDisplay.textContent === 'Click to reveal') {
+                upiDisplay.textContent = upiId;
+                upiDisplay.style.color = '#ffd700';
+                document.querySelector('.upi-container').classList.add('revealed');
+                showNotification('UPI ID revealed! Click again to open payment app.', 'info');
+                return;
             }
+            
+            // Second click: open payment app
+            // Check if Web Share API is available (modern mobile browsers)
+            if (navigator.share) {
+                navigator.share({
+                    title: 'CodeFounders Entrance Test Fee',
+                    text: `Pay ₹${amount} to ${upiId}`,
+                    url: `upi://pay?pa=${upiId}&pn=CodeFounders&am=${amount}&cu=INR&tn=Entrance Test Fee`
+                }).then(() => {
+                    showNotification('Payment app opened!', 'success');
+                }).catch(() => {
+                    // Fallback to direct app opening
+                    openDirectUPIApp();
+                });
+            } else {
+                // Fallback for older browsers
+                openDirectUPIApp();
+            }
+        }
+
+        // Direct UPI app opening function
+        function openDirectUPIApp() {
+            const upiId = 'ankit.gautam42@ybl';
+            const amount = '500';
+            
+            // Check if user is on mobile
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // UPI deep links for different apps
+                const upiApps = [
+                    // PhonePe
+                    `phonepe://pay?pa=${upiId}&pn=CodeFounders&am=${amount}&cu=INR&tn=Entrance Test Fee`,
+                    // Google Pay
+                    `googleplay://upi/pay?pa=${upiId}&pn=CodeFounders&am=${amount}&cu=INR&tn=Entrance Test Fee`,
+                    // Paytm
+                    `paytmmp://pay?pa=${upiId}&pn=CodeFounders&am=${amount}&cu=INR&tn=Entrance Test Fee`,
+                    // BHIM
+                    `bhim://upi/pay?pa=${upiId}&pn=CodeFounders&am=${amount}&cu=INR&tn=Entrance Test Fee`,
+                    // Amazon Pay
+                    `amazonpay://upi/pay?pa=${upiId}&pn=CodeFounders&am=${amount}&cu=INR&tn=Entrance Test Fee`
+                ];
+                
+                // Try to open each app using window.location
+                let appOpened = false;
+                const appNames = ['PhonePe', 'Google Pay', 'Paytm', 'BHIM', 'Amazon Pay'];
+                
+                for (let i = 0; i < upiApps.length; i++) {
+                    try {
+                        // Try to open the app
+                        showNotification(`Trying to open ${appNames[i]}...`, 'info');
+                        window.location.href = upiApps[i];
+                        appOpened = true;
+                        showNotification(`${appNames[i]} opened successfully!`, 'success');
+                        break;
+                    } catch (error) {
+                        continue;
+                    }
+                }
+                
+                // If no app opened, fallback to copy UPI ID
+                if (!appOpened) {
+                    copyUPIWithFallback();
+                }
+            } else {
+                // Desktop user - show instructions and copy UPI ID
+                showNotification('Desktop detected. UPI ID copied! Use mobile UPI apps to pay.', 'info');
+                copyUPIWithFallback();
+            }
+        }
+
+        // Copy UPI ID with fallback
+        function copyUPIWithFallback() {
+            const upiId = 'ankit.gautam42@ybl';
+            
+            navigator.clipboard.writeText(upiId).then(() => {
+                showNotification('UPI ID copied! Open any UPI app and paste it.', 'info');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = upiId;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('UPI ID copied! Open any UPI app and paste it.', 'info');
+            });
         }
 
         // Google Form link integration
@@ -3895,6 +5029,79 @@
             leaderboardObserver.observe(leaderboardSection);
         }
 
+        // Student Registration Form Handler - Commented out
+        /*
+        document.getElementById('studentRegistrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Here you would typically send data to your Google Sheets
+                // For now, we'll simulate a successful registration
+                
+                // Simulate API call delay
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Show success message
+                showNotification('Registration successful! We will contact you soon.', 'success');
+                
+                // Reset form
+                this.reset();
+                
+                // Show success message for registration
+                showNotification('Registration successful! We will contact you soon to discuss your enrollment.', 'success');
+                
+            } catch (error) {
+                showNotification('Registration failed. Please try again.', 'error');
+            } finally {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        */
+
+
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                z-index: 3000;
+                animation: slideInRight 0.5s ease;
+                max-width: 300px;
+            `;
+            
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}" style="color: #ffd700;"></i>
+                    <strong>${message}</strong>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.5s ease forwards';
+                setTimeout(() => notification.remove(), 500);
+            }, 4000);
+        }
+
         // Add slide animations for notifications
         const notificationAnimations = `
             @keyframes slideInRight {
@@ -3912,5 +5119,4 @@
         document.head.appendChild(notificationStyle);
     </script>
 </body>
-</html>
 </html>
